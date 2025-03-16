@@ -43,9 +43,18 @@ function atualizarListaAmigo() {
 
     })
 
-    let li = document.createElement('li');
-        li.textContent = amigos[cont]
-        listaAmigos.appendChild(li);
-        cont++;
+    }
+
+    function sortearAmigo() {
+        if(amigos.length <=1) {
+            alert('Adicione ao menos dois amigos antes de sortear');
+            return;
+        }
+        let indiceSorteado = Math.floor(Math.random() * amigos.length);
+        let amigoSorteado = amigos[indiceSorteado];
+
+        let ulTagResultado = document.getElementById('resultado');
+        ulTagResultado.innerHTML = `<li>O amigo sorteado foi: ${amigoSorteado}</li>`;
+        
 
     }
